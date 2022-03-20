@@ -1,0 +1,231 @@
+:root {
+  --gradient-red: url("./img/brushed-alum.png"), url("./img/shenron.png"),
+    linear-gradient(-45deg, #f12711, #f5af19, #f12711);
+  /* --gradient-red: url("./img/test.png"),
+    linear-gradient(-45deg, orangered, #e73c7e, orangered); */
+  --gradient-green: url("./img/brushed-alum.png"), url("./img/shenron.png"),
+    linear-gradient(-45deg, #52c234, #307e1a, #52c234);
+  --gradient-blue: url("./img/brushed-alum.png"), url("./img/shenron.png"),
+    linear-gradient(-45deg, #1fa2ff, #12d8fa, #1fa2ff, #12d8fa);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: url("./img/bground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  margin: 0 auto;
+  transition: all 2s;
+  width: 600px;
+  position: relative;
+  /* background-color: black; */
+}
+
+.card__box {
+  display: none;
+  transform: translateX(1000px);
+  margin: 100px auto;
+  width: 450px;
+  /* background: var(--gradient-red); */
+  background-size: cover;
+  box-shadow: 2px 5px 15px black;
+  border-radius: 10px;
+  border: 1px solid red;
+  animation: cardLoad 0.3s;
+}
+
+.human {
+  background: var(--gradient-blue);
+}
+
+.dbz {
+  width: 55%;
+  display: block;
+  margin: 25px auto;
+}
+
+.card__box-title {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 5px;
+  z-index: 99;
+  margin-top: 0px;
+  padding: 10px;
+
+  background-color: rgba(255, 0, 0, 0.829);
+
+  background-size: cover;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  /*   display: block; */
+  text-align: center;
+  position: relative;
+}
+
+.card__box-subtitle {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #fff;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 5px;
+}
+
+.card__box-title--db {
+  width: 80px;
+  position: absolute;
+  right: 20px;
+  top: -10px;
+  animation: rotate 60s;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.185));
+}
+
+.card__box_container {
+  margin: 15px auto;
+  border: 7px solid white;
+  border-radius: 10px;
+  width: 85%;
+  height: 400px;
+  background: url("./img/imgBground.jpg");
+  background-size: cover;
+}
+
+.card__box-paragraph {
+  color: white;
+  font-size: 16px;
+  margin-top: 5px;
+  padding: 5px 25px;
+  line-height: 30px;
+  letter-spacing: 1.2px;
+  text-align: left;
+  margin: 10px 30px 25px 30px;
+  border-radius: 5px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+}
+
+.card__box-img {
+  width: 80%;
+  /* height: 300  px; */
+  transform: translateY(-550px);
+  z-index: -1;
+  filter: drop-shadow(2px 3px 3px black);
+  animation: imgMove 10s ease;
+  animation-iteration-count: infinite;
+}
+
+.btn {
+  font-size: 50px;
+  padding: 15px;
+  background: var(--gradient-red);
+  color: white;
+  display: inline-block;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.425);
+}
+
+.btn a {
+  color: #fff;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.btn-left {
+  position: absolute;
+  top: 400px;
+  left: 0;
+}
+.btn-right {
+  position: absolute;
+  top: 400px;
+  right: 0;
+}
+
+.active {
+  display: block;
+  transform: translateX(0);
+}
+
+@keyframes imgLoad {
+  0% {
+    opacity: 0%;
+    transform: translateY(-500px);
+  }
+
+  50% {
+    opacity: 85%;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes cardLoad {
+  0% {
+    opacity: 0%;
+    transform: scaleX(1);
+  }
+
+  10% {
+    opacity: 85%;
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 100%;
+  }
+}
+/* @keyframes cardLoad {
+  0% {
+    opacity: 0%;
+    transform: translateX(-500px);
+  }
+
+  50% {
+    opacity: 85%;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 100%;
+  }
+} */
+
+@keyframes imgMove {
+  0% {
+    transform: translateY(-40px) translateX(-10px);
+  }
+
+  50% {
+    transform: translateY(-55px) translateX(10px);
+  }
+
+  100% {
+    transform: translateY(-40px) translateX(-10px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  /* 
+  50% {
+    transform: rotate(360deg);
+  } */
+
+  /* 100% {
+    transform: rotate(360deg);
+  } */
+}
